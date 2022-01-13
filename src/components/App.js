@@ -1,5 +1,6 @@
 import '../App.css';
 import Header from "./Header";
+import BikeRides from './BikeRides';
 
 function App() {
 
@@ -7,10 +8,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          Good morning Alessandra!
+          Bike Ride Tracker
         </p>
         <Header />
+        
       </header>
+      <BikeRides />
     </div>
   );
 }
