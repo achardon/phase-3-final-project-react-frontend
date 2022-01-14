@@ -6,6 +6,7 @@ function Ride( {ride} ) {
         <div>
             <h3>{ride.name} ({ride.distance} miles)</h3>
             <p>{ride.description}</p>
+            <button>Delete</button>
         </div>
     )
 }

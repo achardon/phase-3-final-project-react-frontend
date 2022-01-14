@@ -1,6 +1,6 @@
 import '../App.css';
 import Header from "./Header";
-import BikeRides from './BikeRides';
+import Riders from './Riders';
 
 function App() {
 
@@ -10,10 +10,10 @@ function App() {
         <p>
           Bike Ride Tracker
         </p>
-        <Header />
+        {/* <Header /> */}
         
       </header>
-      <BikeRides />
+      <Riders />
     </div>
   );
 }
