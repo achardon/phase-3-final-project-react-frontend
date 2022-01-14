@@ -3,7 +3,7 @@ import Ride from "./Ride";
 import styled from "styled-components";
 
 
-function BikeRides( {name} ) {
+function BikeRides( {name, rides} ) {
 
     const [bikeRides, setBikeRides] = useState([])
     
@@ -14,13 +14,12 @@ function BikeRides( {name} ) {
             setBikeRides(data)
         })
     }, [])
-    
-    console.log(bikeRides)
-    
+        
     return (
         <Card>
-            <h2>{name}</h2>
-            {bikeRides.map(ride => {
+            <h2 style={{textAlign:"center"}}>{name}</h2>
+            <button style={{width: 80}}>Add Ride</button>
+            {rides.map(ride => {
                 return <Ride key={ride.id} ride={ride} />
                 }
             )}
@@ -30,11 +29,13 @@ function BikeRides( {name} ) {
 
 export default BikeRides;
 
+//ActiveRecord - to get rider name: BikeRide.second.rider.name
+
 //need to import styled components in order to use the following code:
 //npm i styled-components
 const Card = styled.div`
-  display: flex;  
-  text-align: center;
+//   display: flex;  
+  text-align: left;
   border: rgb(195, 137, 10) solid 8px;
   padding: 1rem;
   width: 400px;

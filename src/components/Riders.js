@@ -15,11 +15,12 @@ function Riders() {
     }, [])
 
     // riders.map(rider => console.log(rider.name))
+    // riders.map(rider => console.log(rider.bike_rides))
 
     return(
         <div>
             {riders.map(rider => {
-                return <BikeRides key={rider.id} name={rider.name} />
+                return <BikeRides key={rider.id} name={rider.name} rides={rider.bike_rides} />
                 }
             )}
         </div>
