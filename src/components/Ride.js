@@ -1,12 +1,24 @@
+import styled from "styled-components";
+
 function Ride( {ride} ) {
 
     return(
-        <div>
-            <h3>{ride.name} ({ride.distance} miles)</h3>
+        <Card>
+            <h2>{ride.name}</h2>
+            <h4>Date: {ride.date}</h4>
             <p>{ride.description}</p>
             <button>Delete</button>
-        </div>
+        </Card>
     )
 }
 
 export default Ride;
+
+const Card = styled.div`
+  text-align: left;
+  border: rgb(195, 137, 10) solid 2px;
+  padding: 1rem;
+  width: 300px;
+//   display: inline-grid;
+  margin: 10px;
+`;
