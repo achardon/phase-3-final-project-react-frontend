@@ -18,7 +18,7 @@ function BikeRides( {name, rides} ) {
     return (
         <Card>
             <h2 style={{textAlign:"center"}}>{name}</h2>
-            <button style={{width: 80}}>Add Ride</button>
+            {/* <button style={{width: 80}}>Add Ride</button> */}
             {rides.map(ride => {
                 return <Ride key={ride.id} ride={ride} />
                 }
@@ -35,7 +35,7 @@ export default BikeRides;
 //npm i styled-components
 const Card = styled.div`
 //   display: flex;  
-  text-align: left;
+  text-align: center;
   border: rgb(195, 137, 10) solid 8px;
   padding: 1rem;
   width: 400px;

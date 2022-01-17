@@ -16,9 +16,9 @@ export default Ride;
 
 const Card = styled.div`
   text-align: left;
-  border: rgb(195, 137, 10) solid 2px;
+  border: rgb(195, 137, 10) solid 5px;
   padding: 1rem;
   width: 300px;
-//   display: inline-grid;
+  // display: inline-grid;
   margin: 10px;
 `;

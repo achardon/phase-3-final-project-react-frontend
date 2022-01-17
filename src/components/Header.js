@@ -12,13 +12,17 @@ function Header() {
         })
     }, []);
 
-    console.log(message)
+    // console.log(message)
     const text = message.message
 
     return (
-        <div>
+      <header className="App-header">
+        <h1>Bike Ride Tracker</h1>
+        <p style={{fontSize: 16}}>
             {text}
-        </div>
+        </p>
+        
+      </header>
     )
 }
 
