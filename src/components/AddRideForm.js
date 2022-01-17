@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import styled from 'styled-components';
 
 
-function AddRideForm() {
+function AddRideForm( {onAddRide} ) {
 
     const [newRide, setNewRide] = useState({
         name: "Alessandra",
@@ -31,7 +31,7 @@ function AddRideForm() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(newRide)
+        onAddRide(newRide)
     }
 
     return(
@@ -44,8 +44,8 @@ function AddRideForm() {
                     <label>
                         Name:
                         <select name="name" value={newRide.name} onChange={handleChange}>
-                            <option value="Alessandra">Alessandra</option>
-                            <option value="Patrick">Patrick</option>
+                            <option >Alessandra</option>
+                            <option >Patrick</option>
                         </select>
                     </label>
 
@@ -55,7 +55,7 @@ function AddRideForm() {
                             {routeArr.map(route => {
                                 return <option key={route}>{route}</option>
                             })}
-                            <option value="other">Other</option>
+                            <option >Other</option>
                         </select>
                     </label>
 

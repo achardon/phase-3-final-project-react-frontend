@@ -5,15 +5,15 @@ import styled from "styled-components";
 
 function BikeRides( {name, rides} ) {
 
-    const [bikeRides, setBikeRides] = useState([])
+    // const [bikeRides, setBikeRides] = useState([])
     
-    useEffect(() => {
-        fetch('http://localhost:9292/bike_rides')
-        .then(r => r.json())
-        .then(data => {
-            setBikeRides(data)
-        })
-    }, [])
+    // useEffect(() => {
+    //     fetch('http://localhost:9292/bike_rides')
+    //     .then(r => r.json())
+    //     .then(data => {
+    //         setBikeRides(data)
+    //     })
+    // }, [])
         
     return (
         <Card>

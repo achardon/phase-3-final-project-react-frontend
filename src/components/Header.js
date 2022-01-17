@@ -21,6 +21,7 @@ function Header() {
         <p style={{fontSize: 16}}>
             {text}
         </p>
+        <img src='https://www.outsideonline.com/wp-content/uploads/2020/11/19/cyclist-lens-flare_h.jpg' alt='biker' height='550'/>
         
       </header>
     )
