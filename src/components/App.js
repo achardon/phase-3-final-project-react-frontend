@@ -1,15 +1,15 @@
 import '../App.css';
-import Header from "./Header";
-import Riders from './Riders';
 import {useState, useEffect} from "react";
-import { Route, Routes, Switch, useHistory } from "react-router-dom";
-import { Link, NavLink } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import NavBar from './NavBar';
+import Header from "./Header";
+import Riders from './Riders';
 import AddRideForm from './AddRideForm';
 
 function App() {
 
+  const [riders, setRiders] = useState([])
   const [bikeRides, setBikeRides] = useState([])
     
   useEffect(() => {
@@ -20,18 +20,21 @@ function App() {
       })
   }, [])
 
-  console.log(bikeRides)
+  useEffect(() => {
+      fetch('http://localhost:9292/riders')
+      .then(r => r.json())
+      .then(data => {
+          setRiders(data)
+      })
+  }, [bikeRides])
 
-  function AddRide(newRide) {
-    console.log('adding new ride in App')
-    console.log(newRide)
-    //need to add ride to database here...
-    //may be a good time to watch lecture on posting with Sinatra
-    //create new route in application_controller (backend) in order to post to "/bike_rides" 
-    //send post request to "http://localhost:9292/bike_rides" with newRide info
-    //update bikeRides in this component
+  function addRide(newRide) {
+    setBikeRides([...bikeRides, newRide])
+  }
 
-    
+  function deleteRide(rideID) {
+    const updatedRides = bikeRides.filter(ride => ride.id !== rideID)
+    setBikeRides(updatedRides)
   }
 
   return (
@@ -39,9 +42,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Header />} />
-        <Route path="riders" element={<Riders />} />
-        <Route path="add_ride" element={<AddRideForm onAddRide={AddRide}/>} />
-       
+        <Route path="riders" element={<Riders onDelete={deleteRide} riders={riders}/>} />
+        <Route path="add_ride" element={<AddRideForm onAddRide={addRide} riders={riders}/>} />
       </Routes>
     </div>
   );

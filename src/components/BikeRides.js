@@ -1,26 +1,13 @@
-import {useState, useEffect} from "react";
 import Ride from "./Ride";
 import styled from "styled-components";
 
-
-function BikeRides( {name, rides} ) {
-
-    // const [bikeRides, setBikeRides] = useState([])
-    
-    // useEffect(() => {
-    //     fetch('http://localhost:9292/bike_rides')
-    //     .then(r => r.json())
-    //     .then(data => {
-    //         setBikeRides(data)
-    //     })
-    // }, [])
+function BikeRides( {name, rides, onDelete} ) {
         
     return (
         <Card>
             <h2 style={{textAlign:"center"}}>{name}</h2>
-            {/* <button style={{width: 80}}>Add Ride</button> */}
             {rides.map(ride => {
-                return <Ride key={ride.id} ride={ride} />
+                return <Ride key={ride.id} ride={ride} onDelete={onDelete}/>
                 }
             )}
         </Card>
@@ -42,6 +29,7 @@ const Card = styled.div`
   display: inline-grid;
   margin: 25px;
   box-shadow: 8px 8px #e04b52;
+  background-color: white;
 //   img {
 //     height: 150px;
 //     justify-self: center;

@@ -1,30 +1,18 @@
-import {useState, useEffect} from "react";
-import styled from "styled-components";
 import BikeRides from "./BikeRides";
+import styled from 'styled-components';
 
-function Riders() {
 
-    const [riders, setRiders] = useState([])
-
-    useEffect(() => {
-        fetch('http://localhost:9292/riders')
-        .then(r => r.json())
-        .then(data => {
-            setRiders(data)
-        })
-    }, [])
-
-    // riders.map(rider => console.log(rider.name))
-    // riders.map(rider => console.log(rider.bike_rides))
+function Riders( {onDelete, riders} ) {
 
     return(
-        <div>
-            {riders.map(rider => {
-                return <BikeRides key={rider.id} name={rider.name} rides={rider.bike_rides} />
-                }
-            )}
-        </div>
+        <Rider>
+            {riders.map(rider => <BikeRides key={rider.id} name={rider.name} rides={rider.bike_rides} onDelete={onDelete}/>)}
+        </Rider>
     )
 }
 
 export default Riders;
+
+const Rider = styled.div`
+background-color: #282c34;
+`

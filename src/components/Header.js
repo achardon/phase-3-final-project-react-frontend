@@ -12,7 +12,6 @@ function Header() {
         })
     }, []);
 
-    // console.log(message)
     const text = message.message
 
     return (
