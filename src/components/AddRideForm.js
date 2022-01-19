@@ -47,8 +47,8 @@ function AddRideForm( {onAddRide, riders} ) {
     return(
         <Page>
             <h1 style={{color: 'white', padding: 30}}>Add Ride</h1>
-            <Form>
-                <form onSubmit={handleSubmit}>
+            <Form >
+                <form onSubmit={handleSubmit} className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
                     <label>
                         Name:
                         <select name="rider_id" onChange={handleChange} >

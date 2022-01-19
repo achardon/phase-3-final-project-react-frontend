@@ -15,7 +15,7 @@ function Header() {
     const text = message.message
 
     return (
-      <header className="App-header">
+      <header>
         <h1>Bike Ride Tracker</h1>
         <p style={{fontSize: 16}}>
             {text}
