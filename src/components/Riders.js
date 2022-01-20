@@ -5,14 +5,14 @@ import styled from 'styled-components';
 function Riders( {onDelete, riders} ) {
 
     return(
-        <Rider>
+        <div>
             {riders.map(rider => <BikeRides key={rider.id} name={rider.name} rides={rider.bike_rides} onDelete={onDelete}/>)}
-        </Rider>
+        </div>
     )
 }
 
 export default Riders;
 
-const Rider = styled.div`
-background-color: #282c34;
-`
+// const Rider = styled.div`
+// background-color: #282c34;
+// `

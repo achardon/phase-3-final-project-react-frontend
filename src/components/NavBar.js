@@ -14,20 +14,20 @@ const linkStyles = {
     window.addEventListener('resize', () => setWidth(window.innerWidth))
   
     return (
-      <Bar style={{width: width}}>
+      <div style={{width: width}}>
         <NavLink to="/" style={linkStyles}>Home</NavLink>
         <NavLink to="/riders" style={linkStyles}>Riders</NavLink>
         <NavLink to="/add_ride" style={linkStyles}>Add Ride</NavLink>
 
-      </Bar>
+      </div>
     );
   }
   
   export default NavBar;
   
-  const Bar = styled.div`
-    text-align: center;
-    padding: 20px;
-    background: orange;
-  `;
+  // const Bar = styled.div`
+  //   text-align: center;
+  //   padding: 20px;
+  //   background: orange;
+  // `;
   

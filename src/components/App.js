@@ -38,7 +38,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div>
       <NavBar />
       <Routes>
         <Route path="/" element={<Header />} />

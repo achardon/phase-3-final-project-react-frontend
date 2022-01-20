@@ -1,8 +1,13 @@
 import {useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 
 function AddRideForm( {onAddRide, riders} ) {
     
+
+    //there is a method you can use on the backend (in the controller) called .find_or_create_by, which either finds the id or creates a new id; for example, 
+    //@author = Author.find_or_create_by(name: params[:author][:name])
+
     const [newRide, setNewRide] = useState({
         name: '',
         date: '',
@@ -10,6 +15,9 @@ function AddRideForm( {onAddRide, riders} ) {
         rider_id: '',
         route_id: ''
     })
+
+    // const [navigate, useNavigate] = ('')
+    let navigate = useNavigate()
 
     const [routes, setRoutes] = useState([])
 
@@ -40,14 +48,15 @@ function AddRideForm( {onAddRide, riders} ) {
         .then(r => r.json())
         .then(data => {
             onAddRide(newRide)
-            alert('Success!')
+            // alert('Success!')
+            navigate('/riders')
         })
     }
 
     return(
-        <Page>
-            <h1 style={{color: 'white', padding: 30}}>Add Ride</h1>
-            <Form >
+        <div className='bg-blue-300 py-6 flex items-center justify-center'>
+            <h1>Add Ride</h1>
+            <div className="bg-stone-600">
                 <form onSubmit={handleSubmit} className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
                     <label>
                         Name:
@@ -81,36 +90,36 @@ function AddRideForm( {onAddRide, riders} ) {
                         <input type="text" name="description" value={newRide.description} onChange={handleChange}/>
                     </label>
 
-                    <input type="submit" value="Add" />
+                    <input className = 'bg-indigo-500' type="submit" value="Add" />
                 </form>
-            </Form >
+            </div>
             
-        </Page>
+        </div>
     )
 }
 
 export default AddRideForm;
 
-const Form = styled.div`
-    // display: flex;
-    margin: auto;
-    box-shadow: 4px 4px 5px 20px rgba(255,165,0,0.3);
-    width: 600px;
-    input {
-        padding: 5px;
-        margin: 5px;
-    }
-    label {
-        margin-left: 10px;
-    } 
-    margin-top: 50px;
-    background-color: white;
+// const Form = styled.div`
+//     // display: flex;
+//     margin: auto;
+//     box-shadow: 4px 4px 5px 20px rgba(255,165,0,0.3);
+//     width: 600px;
+//     input {
+//         padding: 5px;
+//         margin: 5px;
+//     }
+//     label {
+//         margin-left: 10px;
+//     } 
+//     margin-top: 50px;
+//     background-color: white;
     
-` 
-const Page = styled.div`
-    background-color: #282c34;
-    height: 800px;
-    margin-top: 0px;
+// ` 
+// const Page = styled.div`
+//     background-color: #282c34;
+//     height: 800px;
+//     margin-top: 0px;
 
-`
+// `
 

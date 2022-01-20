@@ -15,22 +15,22 @@ function Ride( {ride, onDelete} ) {
     }
 
     return(
-        <Card>
+        <div>
             <h3>{ride.name}</h3>
             <em>Date: {ride.date}</em>
             <p>{ride.description}</p>
             <button onClick={handleDelete}>Delete</button>
-        </Card>
+        </div>
     )
 }
 
 export default Ride;
 
-const Card = styled.div`
-  text-align: left;
-  border: rgb(195, 137, 10) solid 5px;
-  padding: 1rem;
-  width: 300px;
-  // display: inline-grid;
-  margin: 10px;
-`;
+// const Card = styled.div`
+//   text-align: left;
+//   border: rgb(195, 137, 10) solid 5px;
+//   padding: 1rem;
+//   width: 300px;
+//   // display: inline-grid;
+//   margin: 10px;
+// `;
