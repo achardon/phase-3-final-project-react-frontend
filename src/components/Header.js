@@ -15,8 +15,8 @@ function Header() {
     const text = message.message
 
     return (
-      <header className="bg-amber-500">
-        <h1>Bike Ride Tracker</h1>
+      <header className = "rounded-lg px-60 py-4 ring-1 ring-slate-900/5 shadow-xl">
+        <h1 className="bg-amber-500 text-6xl">Bike Ride Tracker</h1>
         <p style={{fontSize: 16}}>
             {text}
         </p>

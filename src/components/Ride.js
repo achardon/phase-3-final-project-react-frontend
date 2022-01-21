@@ -15,8 +15,8 @@ function Ride( {ride, onDelete} ) {
     }
 
     return(
-        <div>
-            <h3>{ride.name}</h3>
+        <div >
+            <h1>{ride.name}</h1>
             <em>Date: {ride.date}</em>
             <p>{ride.description}</p>
             <button onClick={handleDelete}>Delete</button>
