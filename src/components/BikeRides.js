@@ -9,11 +9,11 @@ function BikeRides( {name, rides, onDelete} ) {
         <div className='bg-green-500 p-8 flex flex-col'>
             <div>
                 <h2 className='font-bold text-xl text-gray-900 pb-4'>{name}</h2>
-                <div className="space-y-4 ">
-                {rides.map(ride => {
-                    return <Ride key={ride.id} ride={ride} onDelete={onDelete}/>
-                    }
-                )}
+                <div className="space-y-4">
+                    {rides.map(ride => {
+                        return <Ride key={ride.id} ride={ride} onDelete={onDelete}/>
+                        }
+                    )}
                 </div>
             </div>
         </div>
