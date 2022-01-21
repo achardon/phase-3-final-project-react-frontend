@@ -55,11 +55,11 @@ function AddRideForm( {onAddRide, riders} ) {
 
     return(
         // <div className='bg-blue-300 py-6 flex items-center justify-center'>
-        <div className = "rounded-lg  py-4 ring-1 ring-slate-900/5 shadow-xl ">
+        <div className = "rounded-lg  py-4 shadow-xl ">
             <h1 className="bg-green-700 text-6xl py-4 text-center">Add Ride</h1>
             {/* <div className="bg-stone-600"> */}
             {/* <div className = "rounded-lg px-60 py-4 ring-1 ring-slate-900/5 shadow-xl"> */}
-            <div className='bg-green-500 py-6 flex items-center justify-center'>
+            <div className='bg-green-500 py-6 px-40 flex items-center justify-center'>
 
                 <form onSubmit={handleSubmit} className='bg-white shadow-2xl rounded-lg p-14 pt-6 pb-8 m-4 md:items-center'>
                     <label className='py-4 outline-none placeholder-gray-500 font-bold focus:border-green-700'>

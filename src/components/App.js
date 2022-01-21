@@ -6,6 +6,7 @@ import NavBar from './NavBar';
 import Header from "./Header";
 import Riders from './Riders';
 import AddRideForm from './AddRideForm';
+import Goals from './Goals';
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
         <Route path="/" element={<Header />} />
         <Route path="riders" element={<Riders onDelete={deleteRide} riders={riders}/>} />
         <Route path="add_ride" element={<AddRideForm onAddRide={addRide} riders={riders}/>} />
+        <Route path="goals" element={<Goals riders={riders}/>} />
       </Routes>
     </div>
   );
