@@ -3,13 +3,19 @@ import styled from "styled-components";
 
 function BikeRides( {name, rides, onDelete} ) {
         
+    //How do I get the two columns to show up next to each other?
+
     return (
-        <div className = "rounded-lg px-60 py-4 ring-1 ring-slate-900/5 shadow-xl">
-            <h2 style={{textAlign:"center"}}>{name}</h2>
-            {rides.map(ride => {
-                return <Ride key={ride.id} ride={ride} onDelete={onDelete}/>
-                }
-            )}
+        <div className='bg-green-500 p-8 flex flex-col'>
+            <div>
+                <h2 className='font-bold text-xl text-gray-900 pb-4'>{name}</h2>
+                <div className="space-y-4 ">
+                {rides.map(ride => {
+                    return <Ride key={ride.id} ride={ride} onDelete={onDelete}/>
+                    }
+                )}
+                </div>
+            </div>
         </div>
     )
 }

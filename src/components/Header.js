@@ -15,12 +15,12 @@ function Header() {
     const text = message.message
 
     return (
-      <header className = "rounded-lg px-60 py-4 ring-1 ring-slate-900/5 shadow-xl">
-        <h1 className="bg-amber-500 text-6xl">Bike Ride Tracker</h1>
-        <p style={{fontSize: 16}}>
+      <header className = "rounded-lg py-4">
+        <h1 className="bg-green-700 text-6xl p-8 text-center">Bike Ride Tracker</h1>
+        <p className="bg-green-500 text-2xl p-4 text-center">
             {text}
         </p>
-        <img src='https://www.outsideonline.com/wp-content/uploads/2020/11/19/cyclist-lens-flare_h.jpg' alt='biker' height='550'/>
+        <img src='https://images.immediate.co.uk/production/volatile/sites/21/2020/07/Liv-Avail-Advanced-Pro-2-07-7f0712d.jpg?webp=true&quality=45&resize=1240%2C826' alt='biker' height='550'/>
         
       </header>
     )

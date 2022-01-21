@@ -55,46 +55,46 @@ function AddRideForm( {onAddRide, riders} ) {
 
     return(
         // <div className='bg-blue-300 py-6 flex items-center justify-center'>
-        <div className = "rounded-lg px-60 py-4 ring-1 ring-slate-900/5 shadow-xl ">
-            <h1 className="bg-blue-700 text-6xl py-4 flex items-center justify-center">Add Ride</h1>
+        <div className = "rounded-lg  py-4 ring-1 ring-slate-900/5 shadow-xl ">
+            <h1 className="bg-green-700 text-6xl py-4 text-center">Add Ride</h1>
             {/* <div className="bg-stone-600"> */}
             {/* <div className = "rounded-lg px-60 py-4 ring-1 ring-slate-900/5 shadow-xl"> */}
-            <div className='bg-blue-300 py-6 flex items-center justify-center'>
+            <div className='bg-green-500 py-6 flex items-center justify-center'>
 
                 <form onSubmit={handleSubmit} className='bg-white shadow-2xl rounded-lg p-14 pt-6 pb-8 m-4 md:items-center'>
-                    <label className='py-4 outline-none placeholder-gray-500 font-bold focus:border-blue-700'>
+                    <label className='py-4 outline-none placeholder-gray-500 font-bold focus:border-green-700'>
                         Name:
-                        <select className='w-full px-4 py-2 shadow border-b-2 rounded border-blue-500 text-md text-gray-700 placeholder-gray-500 leading-tight focus:border-blue-700' name="rider_id" onChange={handleChange} >
+                        <select className='w-full px-4 py-2 shadow border-b-2 rounded border-green-500 text-md text-gray-700 placeholder-gray-500 leading-tight focus:border-green-700' name="rider_id" onChange={handleChange} >
                             <option value="none">Select Rider</option>
                             {riders.map(rider => <option key={rider.id} value={rider.id} >{rider.name}</option>)}
                         </select>
                     </label>
 
-                    <label className='py-4 outline-none placeholder-gray-500 font-bold focus:border-blue-700 placeholder-gray-500 leading-tight focus:border-blue-700'>
+                    <label className='py-4 outline-none placeholder-gray-500 font-bold focus:border-green-700 placeholder-gray-500 leading-tight focus:border-green-700'>
                         Route:
-                        <select className='w-full px-4 py-2 shadow border-b-2 rounded border-blue-500 text-md text-gray-700 placeholder-gray-500 leading-tight focus:border-blue-700' name="route_id" onChange={handleChange}>
+                        <select className='w-full px-4 py-2 shadow border-b-2 rounded border-green-500 text-md text-gray-700 placeholder-gray-500 leading-tight focus:border-green-700' name="route_id" onChange={handleChange}>
                             <option value="none">Select Route</option>
                             {routes.map(route => <option key={route.id} value={route.id}>{route.title}</option>)}
                             <option >Other</option>
                         </select>
                     </label>
 
-                    <label className='outline-none placeholder-gray-500 font-bold focus:border-blue-700'>
+                    <label className='outline-none placeholder-gray-500 font-bold focus:border-green-700'>
                         Title:
-                        <input className='w-full px-4 py-2 shadow border-b-2 rounded border-blue-500 text-md text-gray-700 placeholder-gray-500 leading-tight focus:border-blue-700' type="text" name="name" value={newRide.name} onChange={handleChange}/>
+                        <input className='w-full px-4 py-2 shadow border-b-2 rounded border-green-500 text-md text-gray-700 placeholder-gray-500 leading-tight focus:border-green-700' type="text" name="name" value={newRide.name} onChange={handleChange}/>
                     </label>
 
-                    <label className='outline-none placeholder-gray-500 font-bold focus:border-blue-700'>
+                    <label className='outline-none placeholder-gray-500 font-bold focus:border-green-700'>
                         Date:
-                        <input className='w-full px-4 py-2 shadow border-b-2 rounded border-blue-500 text-md text-gray-700 placeholder-gray-500 leading-tight focus:border-blue-700' type="text" name="date" value={newRide.date} onChange={handleChange}/>
+                        <input className='w-full px-4 py-2 shadow border-b-2 rounded border-green-500 text-md text-gray-700 placeholder-gray-500 leading-tight focus:border-green-700' type="text" name="date" value={newRide.date} onChange={handleChange}/>
                     </label>
 
-                    <label className='outline-none placeholder-gray-500 font-bold focus:border-blue-700'>
+                    <label className='outline-none placeholder-gray-500 font-bold focus:border-green-700'>
                         Description:
-                        <input className='w-full px-4 py-2 shadow border-b-2 rounded border-blue-500 text-md text-gray-700 placeholder-gray-500 leading-tight focus:border-blue-700' type="text" name="description" value={newRide.description} onChange={handleChange}/>
+                        <input className='w-full px-4 py-2 shadow border-b-2 rounded border-green-500 text-md text-gray-700 placeholder-gray-500 leading-tight focus:border-green-700' type="text" name="description" value={newRide.description} onChange={handleChange}/>
                     </label>
 
-                    <input className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 shadow border-b-2 rounded border-blue-500' type="submit" value="Add" />
+                    <input className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2 shadow border-b-2 rounded border-green-500' type="submit" value="Add" />
                 </form>
             </div>
             
