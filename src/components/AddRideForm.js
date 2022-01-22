@@ -16,7 +16,6 @@ function AddRideForm( {onAddRide, riders} ) {
         route_id: ''
     })
 
-    // const [navigate, useNavigate] = ('')
     let navigate = useNavigate()
 
     const [routes, setRoutes] = useState([])
@@ -103,6 +102,9 @@ function AddRideForm( {onAddRide, riders} ) {
 }
 
 export default AddRideForm;
+
+//stretch goals
+//distance, time out, average speed, other riders
 
 // const Form = styled.div`
 //     // display: flex;

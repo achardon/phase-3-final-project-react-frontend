@@ -11,6 +11,8 @@ function BikeRides( {name, rides, onDelete} ) {
                 <h2 className='font-bold text-xl text-gray-900 pb-4'>{name}</h2>
                 <div className="space-y-4">
                     {rides.map(ride => {
+                        //testing out getting into more info from a foreign key object
+                        console.log(ride.rider_id.name) // why is this undefined?
                         return <Ride key={ride.id} ride={ride} onDelete={onDelete}/>
                         }
                     )}
@@ -21,6 +23,10 @@ function BikeRides( {name, rides, onDelete} ) {
 }
 
 export default BikeRides;
+
+//add to bike ride cards:
+//route name, distance
+//if route does not exist, it should create a new route and add to data base
 
 //ActiveRecord - to get rider name: BikeRide.second.rider.name
 

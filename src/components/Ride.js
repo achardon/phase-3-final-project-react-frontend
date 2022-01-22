@@ -7,11 +7,11 @@ function Ride( {ride, onDelete} ) {
             method: "DELETE"
         })
         onDelete(ride.id)
-        // Why does this not work when I include the .thens below? It says there is an "uncaught (in promise) syntax error: unexpected end of JSON input at Ride js 6"
-        // .then(r => r.json())
-        // .then(data => {
-        //     onDelete(ride.id)
-        // })
+        // Why does this throw an error when I include the .thens below? It says there is an "uncaught (in promise) syntax error: unexpected end of JSON input at Ride js 6" even though it does delete the ride..
+        .then(r => r.json())
+        .then(data => {
+            onDelete(ride.id)
+        })
     }
 
     return(
