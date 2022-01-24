@@ -1,13 +1,17 @@
 import React from 'react';
 import {useState} from 'react';
+import { useNavigate } from "react-router-dom";
 
 
-function AddGoalForm( {riders} ) {
+
+function AddGoalForm( {riders, addGoal} ) {
 
     const [newGoal, setNewGoal] = useState({
         goal: '',
         rider_id: ''
     })
+
+    let navigate = useNavigate()
 
     function handleChange(e) {
         setNewGoal({...newGoal,
@@ -17,8 +21,21 @@ function AddGoalForm( {riders} ) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log('submit!', newGoal)
+        fetch("http://localhost:9292/goals", {
+            method: "POST",    
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newGoal)
+        })
+        .then(r => r.json())
+        .then(data => {
+            addGoal(data)
+            // alert('Success!')
+            navigate('/goals')
+        })
         //Need to send newGoal to Goals component and post new goal to backend
+        // addGoal(newGoal)
     }
 
   return (

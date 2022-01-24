@@ -16,9 +16,16 @@ function Goals( {riders} ) {
         })
     }, [])
 
-    console.log(goals)
-
     //How do I use rider_name function from backend to get name to appear for each goal here? (instead of right now where it is just displaying the id?) I made a method called rider_name in backend. How can I use Goal.rider_name here to display name?
+
+    function addGoal(newGoal) {
+      setGoals([...goals, newGoal])
+    }
+
+    function deleteGoal(goal) {
+      const updatedGoals = goals.filter(g => g.id !== goal.id)
+      setGoals(updatedGoals)
+    }
 
     return (
 
@@ -28,9 +35,9 @@ function Goals( {riders} ) {
 
         <div className='bg-green-500 p-8 space-y-4 text-center'>
 
-            {goals.map(goal => <Goal key={goal.id} goal={goal}/> )}
+            {goals.map(goal => <Goal key={goal.id} goal={goal} deleteGoal={deleteGoal}/> )}
 
-            <AddGoalForm riders={riders} />
+            <AddGoalForm riders={riders} addGoal={addGoal}/>
         </div>
 
       </div>

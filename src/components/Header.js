@@ -22,7 +22,9 @@ function Header() {
         <p className="bg-green-500 text-2xl p-4 text-center">
             {text}
         </p>
-        <img src='https://images.immediate.co.uk/production/volatile/sites/21/2020/07/Liv-Avail-Advanced-Pro-2-07-7f0712d.jpg?webp=true&quality=45&resize=1240%2C826' alt='biker' height='550' class="place-content-center"/>
+        <div className="justify-self-center"> 
+          <img src='https://images.immediate.co.uk/production/volatile/sites/21/2020/07/Liv-Avail-Advanced-Pro-2-07-7f0712d.jpg?webp=true&quality=45&resize=1240%2C826' alt='biker' height='550' className="content-center"/>
+        </div>
         
       </header>
     )
