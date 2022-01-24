@@ -43,7 +43,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Header />} />
-        <Route path="riders" element={<Riders onDelete={deleteRide} riders={riders}/>} />
+        <Route path="riders" element={<Riders onDelete={deleteRide} bikeRides={bikeRides} riders={riders}/>} />
         <Route path="add_ride" element={<AddRideForm onAddRide={addRide} riders={riders}/>} />
         <Route path="goals" element={<Goals riders={riders}/>} />
       </Routes>

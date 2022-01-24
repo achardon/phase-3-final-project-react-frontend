@@ -34,6 +34,8 @@ function AddRideForm( {onAddRide, riders} ) {
         })
     }
 
+    //Need to trouble shoot submitting new ride and making sure all data (especially route info) is included
+
     function handleSubmit(e) {
         e.preventDefault();
         //adding ride to database here

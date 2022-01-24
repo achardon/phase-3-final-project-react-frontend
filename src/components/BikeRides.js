@@ -1,17 +1,19 @@
 import Ride from "./Ride";
 import styled from "styled-components";
 
-function BikeRides( {name, rides, onDelete} ) {
+function BikeRides( {rider, rides, onDelete} ) {
         
     //How do I get the two columns to show up next to each other?
 
     return (
-        <div className='bg-green-500 p-8 flex flex-col'>
+        <div className='bg-green-500 p-8 flex flex-col grid-flow-row '>
             <div>
-                <h2 className='font-bold text-xl text-gray-900 pb-4'>{name}</h2>
+                <h2 className='font-bold text-xl text-gray-900 pb-4'>{rider.name}</h2>
                 <div className="space-y-4">
                     {rides.map(ride => {
-                        return <Ride key={ride.id} ride={ride} onDelete={onDelete}/>
+                        if (ride.rider_id === rider.id) {
+                            return <Ride key={ride.id} ride={ride} onDelete={onDelete}/>
+                        }
                         }
                     )}
                 </div>
