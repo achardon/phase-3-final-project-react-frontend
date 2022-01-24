@@ -8,15 +8,32 @@ function AddGoalForm( {riders, addGoal} ) {
 
     const [newGoal, setNewGoal] = useState({
         goal: '',
-        rider_id: ''
+        rider_id: '',
+        rider: {
+            id: '',
+            name: ''
+        }
     })
 
     let navigate = useNavigate()
 
+
     function handleChange(e) {
-        setNewGoal({...newGoal,
-            [e.target.name]: e.target.value
-        })
+        const selectedRider = riders.filter(r => r.id === parseInt(e.target.value)) 
+        if (e.target.name === "rider_id") {
+            setNewGoal({...newGoal,
+                rider_id: e.target.value,
+                rider: {
+                    id: e.target.value,
+                    name: selectedRider[0].name
+                }
+            })
+        }
+        else {
+            setNewGoal({...newGoal,
+                [e.target.name]: e.target.value
+            })
+        }
     }
 
     function handleSubmit(e) {
@@ -34,8 +51,6 @@ function AddGoalForm( {riders, addGoal} ) {
             // alert('Success!')
             navigate('/goals')
         })
-        //Need to send newGoal to Goals component and post new goal to backend
-        // addGoal(newGoal)
     }
 
   return (
@@ -49,7 +64,7 @@ function AddGoalForm( {riders, addGoal} ) {
                         Name:
                         <select className='px-4 py-2 ml-4 shadow border-b-2 rounded border-green-500' name="rider_id" onChange={handleChange}>
                             <option value="none">Select Rider</option>
-                            {riders.map(rider => <option key={rider.id} value={rider.id} >{rider.name}</option>)}
+                            {riders.map(rider => <option key={rider.name} value={rider.id} >{rider.name}</option>)}
                         </select>
                 </label>
 

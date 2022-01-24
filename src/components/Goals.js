@@ -33,7 +33,7 @@ function Goals( {riders} ) {
         <h1 className="bg-green-700 text-6xl py-4 text-center">Goals</h1>
 
 
-        <div className='bg-green-500 p-8 space-y-4 text-center'>
+        <div className='bg-green-500 p-8 space-y-4 flex flex-col items-center'>
 
             {goals.map(goal => <Goal key={goal.id} goal={goal} deleteGoal={deleteGoal}/> )}
 
