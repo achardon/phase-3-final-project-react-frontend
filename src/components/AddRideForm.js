@@ -13,7 +13,14 @@ function AddRideForm( {onAddRide, riders} ) {
         date: '',
         description: '',
         rider_id: '',
-        route_id: ''
+        route_id: '',
+        // route: {
+        //     title: '',
+        //     difficulty: '',
+        //     distance: '',
+        //     directions: '',
+        //     id: ''
+        // }
     })
 
     let navigate = useNavigate()
@@ -29,12 +36,21 @@ function AddRideForm( {onAddRide, riders} ) {
     }, [])
 
     function handleChange(e) {
-        setNewRide({...newRide,
-            [e.target.name]: e.target.value
-        })
+        // const route = routes.find(route => route.id === parseInt(e.target.value))
+        // console.log(route)
+        // if (e.target.name === 'route_id') {
+        //     setNewRide({...newRide,
+        //         route_id: e.target.value,
+        //         route: route
+        //     })
+        // }
+        // else {
+            setNewRide({...newRide,
+                [e.target.name]: e.target.value
+            })
+        // }
     }
 
-    //Need to trouble shoot submitting new ride and making sure all data (especially route info) is included
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -48,7 +64,8 @@ function AddRideForm( {onAddRide, riders} ) {
         })
         .then(r => r.json())
         .then(data => {
-            onAddRide(newRide)
+            
+            onAddRide(data)
             // alert('Success!')
             navigate('/riders')
         })
@@ -76,7 +93,6 @@ function AddRideForm( {onAddRide, riders} ) {
                         <select className='w-full px-4 py-2 shadow border-b-2 rounded border-green-500 text-md text-gray-700 placeholder-gray-500 leading-tight focus:border-green-700' name="route_id" onChange={handleChange}>
                             <option value="none">Select Route</option>
                             {routes.map(route => <option key={route.id} value={route.id}>{route.title}</option>)}
-                            <option >Other</option>
                         </select>
                     </label>
 

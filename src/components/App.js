@@ -12,14 +12,23 @@ function App() {
 
   const [riders, setRiders] = useState([])
   const [bikeRides, setBikeRides] = useState([])
-    
+  const [routes, setRoutes] = useState([])
+
   useEffect(() => {
-      fetch('http://localhost:9292/bike_rides')
+      fetch('http://localhost:9292/routes')
       .then(r => r.json())
       .then(data => {
-          setBikeRides(data)
+          setRoutes(data)
       })
   }, [])
+    
+  useEffect(() => {
+        fetch('http://localhost:9292/bike_rides')
+        .then(r => r.json())
+        .then(data => {
+            setBikeRides(data)
+        })
+    }, [])
 
   useEffect(() => {
       fetch('http://localhost:9292/riders')
@@ -27,10 +36,13 @@ function App() {
       .then(data => {
           setRiders(data)
       })
-  }, [bikeRides])
+  }, [])
 
   function addRide(newRide) {
-    setBikeRides([...bikeRides, newRide])
+    const route = routes.find(route => route.id === newRide.route_id)
+    const rideWithRoute = {...newRide, route: route}
+    console.log(rideWithRoute)
+    setBikeRides([...bikeRides, rideWithRoute])
   }
 
   function deleteRide(rideID) {
