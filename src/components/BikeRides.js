@@ -6,10 +6,10 @@ function BikeRides( {rider, rides, onDelete} ) {
     //How do I get the two columns to show up next to each other?
 
     return (
-        <div className='bg-green-500 p-8 flex flex-col grid-flow-row '>
+        <div className='bg-green-500 p-8 flex-col'>
             <div>
                 <h2 className='font-bold text-xl text-gray-900 pb-4'>{rider.name}</h2>
-                <div className="space-y-4">
+                <div className="p-4 space-y-4 ">
                     {rides.map(ride => {
                         if (ride.rider_id === rider.id) {
                             return <Ride key={ride.id} ride={ride} onDelete={onDelete}/>
