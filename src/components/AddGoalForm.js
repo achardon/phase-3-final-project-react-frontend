@@ -2,8 +2,6 @@ import React from 'react';
 import {useState} from 'react';
 import { useNavigate } from "react-router-dom";
 
-
-
 function AddGoalForm( {riders, addGoal} ) {
 
     const [newGoal, setNewGoal] = useState({
@@ -16,7 +14,6 @@ function AddGoalForm( {riders, addGoal} ) {
     })
 
     let navigate = useNavigate()
-
 
     function handleChange(e) {
         const selectedRider = riders.filter(r => r.id === parseInt(e.target.value)) 
@@ -49,6 +46,14 @@ function AddGoalForm( {riders, addGoal} ) {
         .then(data => {
             addGoal(data)
             // alert('Success!')
+            setNewGoal({
+                goal: '',
+                rider_id: '',
+                rider: {
+                    id: '',
+                    name: ''
+                }
+            })
             navigate('/goals')
         })
     }

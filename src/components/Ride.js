@@ -1,8 +1,7 @@
-import styled from "styled-components";
 import {useState} from 'react';
 import EditRide from "./EditRide";
 
-function Ride( {ride, onDelete} ) {
+function Ride( {ride, onDelete, onUpdate} ) {
 
     const [isEditing, setIsEditing] = useState(false)
 
@@ -10,29 +9,21 @@ function Ride( {ride, onDelete} ) {
         fetch(`http://localhost:9292/bike_rides/${ride.id}`, {
             method: "DELETE"
         })
-        // onDelete(ride.id)
-        // Why does this throw an error when I include the .thens below? It says there is an "uncaught (in promise) syntax error: unexpected end of JSON input at Ride js 6" even though it does delete the ride..
         .then(data => {
             onDelete(ride.id)
         })
     }
 
     function handleEdit() {
-        console.log('edit')
         setIsEditing(() => !isEditing)
     }
-    console.log(isEditing)
     
-    // console.log(ride.route_id)
-    // console.log(ride.route)
-
-
     return(
         // <div className='bg-green-600 py-4 rounded-lg outline-none placeholder-gray-500 font-bold focus:border-green-700 placeholder-gray-500 leading-tight focus:border-green-700'>
             
             <div className=' bg-white p-8 rounded-lg shadow-2xl max-w-md'>
                 {isEditing ? (
-                <EditRide ride={ride} isEditing={isEditing} setIsEditing={setIsEditing} />
+                <EditRide ride={ride} isEditing={isEditing} setIsEditing={setIsEditing} onUpdate={onUpdate}/>
                 ) : (
                     <>
                         <h1 className='font-bold text-xl leading-tight text-gray-900 pb-4'>{ride.name}</h1>

@@ -1,7 +1,7 @@
 import Ride from "./Ride";
 import styled from "styled-components";
 
-function BikeRides( {rider, rides, onDelete} ) {
+function BikeRides( {rider, rides, onDelete, onUpdate} ) {
         
     //How do I get the two columns to show up next to each other?
 
@@ -12,7 +12,7 @@ function BikeRides( {rider, rides, onDelete} ) {
                 <div className="p-4 space-y-4 ">
                     {rides.map(ride => {
                         if (ride.rider_id === rider.id) {
-                            return <Ride key={ride.id} ride={ride} onDelete={onDelete}/>
+                            return <Ride key={ride.id} ride={ride} onDelete={onDelete} onUpdate={onUpdate}/>
                         }
                         }
                     )}

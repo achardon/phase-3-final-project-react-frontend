@@ -1,7 +1,6 @@
 import '../App.css';
 import {useState, useEffect} from "react";
 import { Route, Routes } from "react-router-dom";
-import styled from "styled-components";
 import NavBar from './NavBar';
 import Header from "./Header";
 import Riders from './Riders';
@@ -41,7 +40,6 @@ function App() {
   function addRide(newRide) {
     const route = routes.find(route => route.id === newRide.route_id)
     const rideWithRoute = {...newRide, route: route}
-    console.log(rideWithRoute)
     setBikeRides([...bikeRides, rideWithRoute])
   }
 
@@ -50,12 +48,24 @@ function App() {
     setBikeRides(updatedRides)
   }
 
+  function updateRide(ride) {
+    const updatedRides = bikeRides.map(r => {
+      if (r.id === ride.id) {
+        return ride
+      }
+      else {
+        return r
+      }
+    })
+    setBikeRides(updatedRides)
+  }
+
   return (
     <div>
       <NavBar />
       <Routes>
         <Route path="/" element={<Header />} />
-        <Route path="riders" element={<Riders onDelete={deleteRide} bikeRides={bikeRides} riders={riders}/>} />
+        <Route path="riders" element={<Riders onDelete={deleteRide} bikeRides={bikeRides} riders={riders} onUpdate={updateRide}/>} />
         <Route path="add_ride" element={<AddRideForm onAddRide={addRide} riders={riders}/>} />
         <Route path="goals" element={<Goals riders={riders}/>} />
       </Routes>
@@ -65,5 +75,6 @@ function App() {
 
 export default App;
 
-
-
+    //stretch: when selecting "other", can you create new route?
+    //there is a method you can use on the backend (in the controller) called .find_or_create_by, which either finds the id or creates a new id; for example, 
+    //@author = Author.find_or_create_by(name: params[:author][:name])

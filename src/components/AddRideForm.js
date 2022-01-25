@@ -4,23 +4,12 @@ import styled from 'styled-components';
 
 function AddRideForm( {onAddRide, riders} ) {
     
-
-    //there is a method you can use on the backend (in the controller) called .find_or_create_by, which either finds the id or creates a new id; for example, 
-    //@author = Author.find_or_create_by(name: params[:author][:name])
-
     const [newRide, setNewRide] = useState({
         name: '',
         date: '',
         description: '',
         rider_id: '',
         route_id: '',
-        // route: {
-        //     title: '',
-        //     difficulty: '',
-        //     distance: '',
-        //     directions: '',
-        //     id: ''
-        // }
     })
 
     let navigate = useNavigate()
@@ -36,15 +25,6 @@ function AddRideForm( {onAddRide, riders} ) {
     }, [])
 
     function handleChange(e) {
-        // const route = routes.find(route => route.id === parseInt(e.target.value))
-        // console.log(route)
-        // if (e.target.name === 'route_id') {
-        //     setNewRide({...newRide,
-        //         route_id: e.target.value,
-        //         route: route
-        //     })
-        // }
-        // else {
             setNewRide({...newRide,
                 [e.target.name]: e.target.value
             })
@@ -54,7 +34,6 @@ function AddRideForm( {onAddRide, riders} ) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        //adding ride to database here
         fetch("http://localhost:9292/bike_rides", {
             method: "POST",    
             headers: {
@@ -64,9 +43,7 @@ function AddRideForm( {onAddRide, riders} ) {
         })
         .then(r => r.json())
         .then(data => {
-            
             onAddRide(data)
-            // alert('Success!')
             navigate('/riders')
         })
     }
