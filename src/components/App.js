@@ -60,12 +60,16 @@ function App() {
     setBikeRides(updatedRides)
   }
 
+  function addRider(rider) {
+    setRiders([...riders, rider])
+  }
+
   return (
     <div>
       <NavBar />
       <Routes>
         <Route path="/" element={<Header />} />
-        <Route path="riders" element={<Riders onDelete={deleteRide} bikeRides={bikeRides} riders={riders} onUpdate={updateRide}/>} />
+        <Route path="riders" element={<Riders onDelete={deleteRide} bikeRides={bikeRides} riders={riders} onUpdate={updateRide} addRider={addRider}/>} />
         <Route path="add_ride" element={<AddRideForm onAddRide={addRide} riders={riders}/>} />
         <Route path="goals" element={<Goals riders={riders}/>} />
       </Routes>
