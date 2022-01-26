@@ -9,7 +9,7 @@ function Riders( {onDelete, riders, bikeRides, onUpdate, addRider} ) {
                 <div className="flex justify-center">
                     <AddRider addRider={addRider} />
                 </div>
-                <div className = "flex flex-row">
+                <div className = "flex">
                     {riders.map(rider => {
                     return <BikeRides key={rider.id} rider={rider} rides={bikeRides} onDelete={onDelete} onUpdate={onUpdate}/>
                     }

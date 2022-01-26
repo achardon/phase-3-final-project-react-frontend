@@ -31,7 +31,10 @@ function Ride( {ride, onDelete, onUpdate} ) {
                         <p className='text-lg text-gray-700 pb-2 pt-4 pl-4'>Date: {ride.date}</p>
                         <p className='text-lg text-gray-700 pb-2 pl-4'>
                             {ride.route.distance? `Distance: ${ride.route.distance} miles` : null}
-                            </p>
+                        </p>
+                        {/* <p className='text-lg text-gray-700 pb-2 pl-4'>
+                            {ride.route.difficulty? `Difficulty: ${ride.route.difficulty}` : null}
+                        </p> */}
                         <p className='text-lg text-gray-700 pb-6 pl-4'>Details: {ride.description}</p>
                         <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mx-1' onClick={handleEdit}>Edit</button>
                         <button className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mx-1' onClick={handleDelete}>Delete</button>
