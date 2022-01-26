@@ -60,7 +60,7 @@ function AddGoalForm( {riders, addGoal} ) {
 
   return (
   <div>
-        <form className='bg-blue-300 shadow-2xl rounded-lg pt-8 pb-8 px-20 md:items-center' onSubmit={handleSubmit}>
+        <form className='bg-green-200 shadow-2xl rounded-lg pt-8 pb-8 px-20 md:items-center' onSubmit={handleSubmit}>
                 <label className='outline-none font-bold p-4'>New Goal:  
                     <input className='px-4 py-2 ml-4 shadow border-b-2 rounded border-green-500' type="text" name="goal" value={newGoal.goal} onChange={handleChange} />
                 </label>

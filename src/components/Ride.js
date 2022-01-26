@@ -26,15 +26,15 @@ function Ride( {ride, onDelete, onUpdate} ) {
                 <EditRide ride={ride} isEditing={isEditing} setIsEditing={setIsEditing} onUpdate={onUpdate}/>
                 ) : (
                     <>
-                        <h1 className='font-bold text-xl leading-tight text-gray-900 pb-4'>{ride.name}</h1>
-                        <h3 className='font-bold text-lg text-gray-700 pb-2'>Route: {ride.route.title}</h3>
-                        <p className='font-bold text-lg text-gray-700 pb-2'>Date: {ride.date}</p>
-                        <p className='font-bold text-lg text-gray-700 pb-2'>Details: {ride.description}</p>
-                        <p className='font-bold text-lg text-gray-700 pb-2'>
+                        <h1 className='font-bold text-xl text-gray-900 pb-2'>{ride.name}</h1>
+                        <em className='text-lg text-gray-700 pb-8'>Route: {ride.route.title}</em>
+                        <p className='text-lg text-gray-700 pb-2 pt-4 pl-4'>Date: {ride.date}</p>
+                        <p className='text-lg text-gray-700 pb-2 pl-4'>
                             {ride.route.distance? `Distance: ${ride.route.distance} miles` : null}
                             </p>
-                        <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded  mx-1' onClick={handleEdit}>Edit</button>
-                        <button className='bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded  mx-1' onClick={handleDelete}>Delete</button>
+                        <p className='text-lg text-gray-700 pb-6 pl-4'>Details: {ride.description}</p>
+                        <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mx-1' onClick={handleEdit}>Edit</button>
+                        <button className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mx-1' onClick={handleDelete}>Delete</button>
                     </>
                 )}
                 </div>

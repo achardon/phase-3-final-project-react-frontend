@@ -10,7 +10,7 @@ Use this app to track your bike rides. There are routes pre-coded into this app 
 ## Authors
 This app was created by Alessandra Chardon for the Phase 3 portfolio project of Flatiron School.
 
-# Image Credit
+## Image Credit
 Home Page: 'https://www.bikeradar.com/advice/best-womens-road-bikes-12-of-the-best/'
 
 # Getting Started with Create React App
