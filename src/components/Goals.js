@@ -1,6 +1,5 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import AddRideForm from './AddRideForm';
 import Goal from './Goal';
 import AddGoalForm from './AddGoalForm';
 
@@ -16,8 +15,6 @@ function Goals( {riders} ) {
         })
     }, [])
 
-    //How do I use rider_name function from backend to get name to appear for each goal here? (instead of right now where it is just displaying the id?) I made a method called rider_name in backend. How can I use Goal.rider_name here to display name?
-
     function addGoal(newGoal) {
       setGoals([...goals, newGoal])
     }
@@ -31,7 +28,6 @@ function Goals( {riders} ) {
 
       <div className = "rounded-lg py-4 shadow-xl ">
         <h1 className="bg-green-700 text-6xl py-4 text-center">Goals</h1>
-
 
         <div className='bg-green-500 p-8 space-y-4 flex flex-col items-center'>
 

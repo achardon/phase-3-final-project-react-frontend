@@ -24,7 +24,6 @@ function AddRider( {addRider} ) {
         })
     }
 
-
   return (
       <div >
           <form className='bg-white  p-14 pt-6 pb-8' onSubmit={handleSubmit}>

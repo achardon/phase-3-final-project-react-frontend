@@ -79,6 +79,3 @@ function App() {
 
 export default App;
 
-    //stretch: when selecting "other", can you create new route?
-    //there is a method you can use on the backend (in the controller) called .find_or_create_by, which either finds the id or creates a new id; for example, 
-    //@author = Author.find_or_create_by(name: params[:author][:name])

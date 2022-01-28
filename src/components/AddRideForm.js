@@ -1,6 +1,5 @@
 import {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-import styled from 'styled-components';
 
 function AddRideForm( {onAddRide, riders} ) {
     
@@ -28,9 +27,7 @@ function AddRideForm( {onAddRide, riders} ) {
             setNewRide({...newRide,
                 [e.target.name]: e.target.value
             })
-        // }
     }
-
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -49,11 +46,8 @@ function AddRideForm( {onAddRide, riders} ) {
     }
 
     return(
-        // <div className='bg-blue-300 py-6 flex items-center justify-center'>
         <div className = "rounded-lg  py-4 shadow-xl ">
             <h1 className="bg-green-700 text-6xl py-4 text-center">Add Ride</h1>
-            {/* <div className="bg-stone-600"> */}
-            {/* <div className = "rounded-lg px-60 py-4 ring-1 ring-slate-900/5 shadow-xl"> */}
             <div className='bg-green-500 py-6 px-60 flex'>
 
                 <form onSubmit={handleSubmit} className='bg-white shadow-2xl rounded-lg p-14 pt-6 pb-8'>
@@ -61,7 +55,6 @@ function AddRideForm( {onAddRide, riders} ) {
                         Name:
                         <select className='w-full px-4 py-2 shadow border-b-2 rounded border-green-500 text-md text-gray-700 focus:border-green-700' name="rider_id" onChange={handleChange} >
                             <option value="" hidden>Select...</option>
-                            {/* <option value="none">Select Rider</option> */}
                             {riders.map(rider => <option key={rider.id} value={rider.id} >{rider.name}</option>)}
                         </select>
                     </label>
@@ -70,7 +63,6 @@ function AddRideForm( {onAddRide, riders} ) {
                         Route:
                         <select className='w-full px-4 py-2 shadow border-b-2 rounded border-green-500 text-md text-gray-700 placeholder-gray-500 leading-tight focus:border-green-700' name="route_id" onChange={handleChange}>
                             <option value="" hidden>Select...</option>
-                            {/* <option value="none">Select Route</option> */}
                             {routes.map(route => <option key={route.id} value={route.id}>{route.title}</option>)}
                         </select>
                     </label>
@@ -100,29 +92,4 @@ function AddRideForm( {onAddRide, riders} ) {
 
 export default AddRideForm;
 
-//stretch goals
-//distance, time out, average speed, other riders
-
-// const Form = styled.div`
-//     // display: flex;
-//     margin: auto;
-//     box-shadow: 4px 4px 5px 20px rgba(255,165,0,0.3);
-//     width: 600px;
-//     input {
-//         padding: 5px;
-//         margin: 5px;
-//     }
-//     label {
-//         margin-left: 10px;
-//     } 
-//     margin-top: 50px;
-//     background-color: white;
-    
-// ` 
-// const Page = styled.div`
-//     background-color: #282c34;
-//     height: 800px;
-//     margin-top: 0px;
-
-// `
 

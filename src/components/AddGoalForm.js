@@ -45,7 +45,6 @@ function AddGoalForm( {riders, addGoal} ) {
         .then(r => r.json())
         .then(data => {
             addGoal(data)
-            // alert('Success!')
             setNewGoal({
                 goal: '',
                 rider_id: '',
@@ -68,7 +67,7 @@ function AddGoalForm( {riders, addGoal} ) {
                 <label className='p-4 outline-none font-bold'>
                         Name:
                         <select className='px-4 py-2 ml-4 shadow border-b-2 rounded border-green-500' name="rider_id" onChange={handleChange}>
-                            <option value="none">Select Rider</option>
+                            <option value="" hidden>Select...</option>
                             {riders.map(rider => <option key={rider.name} value={rider.id} >{rider.name}</option>)}
                         </select>
                 </label>

@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import {useState} from "react";
 
@@ -24,10 +23,4 @@ const linkStyles = {
   }
   
   export default NavBar;
-  
-  // const Bar = styled.div`
-  //   text-align: center;
-  //   padding: 20px;
-  //   background: orange;
-  // `;
   

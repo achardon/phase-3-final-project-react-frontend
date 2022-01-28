@@ -8,7 +8,6 @@ function Goal( {goal, deleteGoal} ) {
         })
         .then(data => {
             deleteGoal(goal)
-            // alert('Success!')
         })
   }
 
